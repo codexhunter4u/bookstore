@@ -58,11 +58,12 @@ class BookController extends CI_Controller {
 			$row[] = empty($books->issued_date) ? ' - ' : $books->issued_date;
 			$row[] = empty($books->return_date) ? ' - ' : $books->return_date;
 			$row[] = ($books->book_status == 0) ? '<span class="available">Available<span>' : '<span class="not-available">Issued</span>';
+			$btn = $books->book_status == 0 ? 'disabled' : '';
 			//add html for action buttons
 			$row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_books('."'".$books->id."'".')"><i class="glyphicon glyphicon-pencil"></i></a>
 				  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_books('."'".$books->id."'".')"><i class="glyphicon glyphicon-trash"></i></a>
 				  <a class="btn btn-sm btn-success" href="javascript:void(0)" title="Issue Book" onclick="issue_books('."'".$books->id."'".')"><i class="glyphicon glyphicon-level-up"></i></a>
-				  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Return book" onclick="return_books('."'".$books->id."'".')"><i class="glyphicon glyphicon-download-alt"></i></a>';
+				  <a '.$btn.' class="btn btn-sm btn-danger" href="javascript:void(0)" title="Return book" onclick="return_books('."'".$books->id."'".')"><i class="glyphicon glyphicon-download-alt"></i></a>';
 		
 			$data[] = $row;
 		}

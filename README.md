@@ -1,7 +1,7 @@
 # Book library
 **Objective**
 
-This is simple Book library application.
+This is simple Book library application. using php, codeigniter, bootstrap
 
 Create Books and issue book to student. Using codeigniter, php, bootstrap, css, html.
 
